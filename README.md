@@ -1,3 +1,9 @@
-# sqlguides
-General SQL Guides Notes, Sample Database Schemas and Database examples.
-TSQL, PostgreSQL, MongoDB. Node API samples.
+# SQL Guides
+
+General SQL Guides Notes.
+
+Jorney through SQL and NoSQL databases.
+
+Started with PostgreSQL and will be adding more details for TSQL (Microsft SQL Server) and MongoDB.
+
+Here you will find sample Database Schemas, queries, viewa and some Node API samples.
