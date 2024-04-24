@@ -55,3 +55,54 @@ node index.js
 
 8) Use Postman or Visual Studio Extension REST Client to test.
 
+
+
+## Testing
+
+Use Jest for testing.
+
+1) Edit package.json
+
+Modify the scripts section as follows:
+
+```js
+  "scripts": {
+    "migrate": "node-pg-migrate",
+    "start": "nodemon index.js",
+	"test": "jest"
+  },
+```
+
+if you want tests to be ran in parallel the add '--no-cache' after jest.
+
+2) Create tests inside code
+
+3) run the tests
+
+```js
+npm run test
+```
+
+## Schema
+
+Schemas can be tought of as folders inside a database.
+To access a specific schema add the name to the table name. i.e. test.users or public.users
+
+```sql
+SHOW search_path
+```
+
+will show the order to look. **"$user", public** by default.
+
+To change the search_path so it would look at **test** first:
+
+```sql
+SET search_path TO test, public
+```
+
+To use schemas with parallel tests:
+
+1) Connect to PostresSQL
+2) Create a new user (role) 
+3) Create a new schema with the same name as the user created
+4) Connect to the database with the user.

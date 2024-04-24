@@ -29,8 +29,13 @@ class UserRepo {
     static async delete(id) {
         // If we want to confirm if the delete was successful, then request the information of
         // the deleted record by adding : 'RETURNING *' at the end of the query
-        const { rows } = await SecurityPolicyViolationEvent.query('DELETE FROM users WHERE id = $1 RETURNING *;', [id])
+        const { rows } = await pool.query('DELETE FROM users WHERE id = $1 RETURNING *;', [id])
         return toCamelCase(rows)[0];
+    }
+
+    static async count() {
+        const { rows } = await pool.query('SELECT COUNT(*) FROM users;');
+        return parseInt(rows[0].count);
     }
 }
 
