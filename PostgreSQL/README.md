@@ -7,3 +7,6 @@ General SQL Guides Notes, Sample Database Schemas and Database examples for Post
 	
 - [PhotoSharing](https://github.com/aere69/sqlguides/tree/main/PostgreSQL/PhotoSharing)
 	PhotoSharing database, queries, views and schema samples.
+
+- [SocialNetwork](https://github.com/aere69/sqlguides/tree/main/PostgreSQL/SocialNetwork)
+	Small API sample in Node.js using PostgreSQL (including migrations).
