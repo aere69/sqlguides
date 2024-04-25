@@ -2,6 +2,8 @@
 
 Simple Node.js code sample using API to connect to PostgreSQL Database. Including database migration examples.
 
+All related files are contained in the [api/social-repo](https://github.com/aere69/sqlguides/tree/main/PostgreSQL/SocialNetwork/api/social-repo) folder.
+
 1) Start Node.js project
 
 ```js
