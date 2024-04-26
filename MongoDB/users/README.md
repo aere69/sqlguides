@@ -1,4 +1,4 @@
-# Users sample
+# Users - MongoDD - CRUD operations
 
 Simple app to use basic Create, Read, Update and Delete (CRUD) operations on a MongoDB.
 
