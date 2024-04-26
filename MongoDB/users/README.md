@@ -33,3 +33,66 @@ Instance1 : name:'Joe'
 Instance2 : name:'Alice'
 Instance3 : name:'Peter'
 ```
+
+## Create
+
+Create a new instance of the schema and use the save() property to persist on the database.
+A new instance has a property **.isNew** that equals to true until the instance is saved to the database.
+
+## Queries
+
+1) Get all
+
+```sh
+ User.find({})
+```
+
+2) Find all
+
+```sh
+User.find(criteria)
+```
+
+- Find all users matching criteria.
+- Returns an array
+
+3) Find One
+
+```sh
+User.findOne(criteria)
+```
+
+- Find the first match for criteria.
+- Returns a single instance/record.
+
+## Delete
+
+MongoDB does not use Delete, instead uses Remove.
+
+**Options for the schema:**
+
+- deleteOne
+- deleteMany
+- findOneAndDelete
+- findByIdAndDelete
+
+**Options for the Instance of the schema:**
+
+- deleteOne
+
+## Update
+
+MongoDB update record/instance on database.
+
+**Options for the schema:**
+
+- updateOne
+- updateMany
+- findOneAndUpdate
+- findByIdAndUpdate
+
+**Options for the Instance of the schema:**
+
+- set and save
+
+[Update Operators Documentation](https://www.mongodb.com/docs/manual/reference/operator/update/)
