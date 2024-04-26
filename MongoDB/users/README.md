@@ -14,8 +14,8 @@ Simple app to use basic Create, Read, Update and Delete (CRUD) operations on a M
    npm install --save mocha nodemon mongoose
    ```
 
-   **Mocha** : Testing framework
-   **Mongoose** : Mongoose Connection Framework
+   - **Mocha** : Testing framework
+   - **Mongoose** : Mongoose Connection Framework
 
 ## The database
 
