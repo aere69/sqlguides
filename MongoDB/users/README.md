@@ -1,6 +1,7 @@
 # Users - MongoDB - CRUD operations
 
 Simple app to use basic Create, Read, Update and Delete (CRUD) operations on a MongoDB.
+Including validation and tests.
 
 1) Start a Node.js project
 
