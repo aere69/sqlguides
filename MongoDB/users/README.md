@@ -1,4 +1,4 @@
-# Users - MongoDD - CRUD operations
+# Users - MongoDB - CRUD operations
 
 Simple app to use basic Create, Read, Update and Delete (CRUD) operations on a MongoDB.
 
@@ -24,7 +24,7 @@ The objective is to create a **User Model**.
 - The User Model contains an schema that defines the instances to be added ot the database.
 - The User Model contains the entire collection of data inside the database.
 - The Schema represents the properties expected inside the Model.
-- From a model we will create instances of the schema. 
+- From a model we will create instances of the schema.
 
 User Model -> Schema -> Name
 
