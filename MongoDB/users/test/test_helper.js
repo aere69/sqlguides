@@ -17,10 +17,15 @@ before((done) => {
 // Run before each test runs
 beforeEach((done) => {
     // Empty Database to start clear.
+    // Get tables
+    const { users, comments, blogposts} = mongoose.connection.collections;
     // Drop tables
-    mongoose.connection.collections.users.drop(() => {
-        // Drop complete.
-        // Ready to run next test!
-        done();
+    users.drop(() => {
+        comments.drop(() => {
+            blogposts.drop(() => {
+                // Ready to run next test!
+                done();
+            });
+        });
     });
 });

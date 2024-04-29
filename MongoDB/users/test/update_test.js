@@ -59,14 +59,16 @@ describe('Updating Records.', () => {
         );
     });
     
-    it('Post count incremented by one for all', (done) => {
+    // xit : tells mocha not to run the test.
+    // Mark it as pending. Working on it.
+    it('Likes count incremented by one for all', (done) => {
         User.updateMany(
             { name: 'Joe'}, 
-            { $inc: { postCount: 1 } }
+            { $inc: { likes: 1 } }
         )
             .then(() => User.findOne({name:'Joe'}))
             .then((user) => {
-                assert(user.postCount === 1);
+                assert(user.likes === 1);
                 done();
             });
     });

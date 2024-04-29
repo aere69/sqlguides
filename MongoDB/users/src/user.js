@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const PostSchema = require('./post');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -10,7 +11,22 @@ const UserSchema = new Schema({
             message: 'Name must be longer than 2 characters'
         }
     },
-    postCount: Number
+    posts: [PostSchema],
+    likes: Number,
+    blogPosts: [{
+        type: Schema.Types.ObjectId,
+        ref: 'blogPost'
+    }]
+});
+
+UserSchema.virtual('postCount').get(function() {
+    return this.posts.length;
+});
+
+UserSchema.pre('deleteOne', {document: true}, function(next) {
+    const BlogPost = mongoose.model('blogPost');
+    BlogPost.deleteMany({ _id: { $in: this.blogPosts } })
+        .then(() => next());
 });
 
 // Create a collection 'user' in MongoDB

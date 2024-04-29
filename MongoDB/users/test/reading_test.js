@@ -3,11 +3,15 @@ const User = require('../src/user');
 
 describe('Reading Users out of the Database', () => {
 
-    let joe;
+    let joe, sue, tom, ann;
 
     beforeEach((done) => {
         joe = new User({ name: 'Joe' });
-        joe.save()
+        sue = new User({ name: 'Sue' });
+        tom = new User({ name: 'Tom' });
+        ann = new User({ name: 'Ann' });
+
+        Promise.all([joe.save(), sue.save(), tom.save(), ann.save()])
             .then(() => { done(); });
     });
 
@@ -28,5 +32,19 @@ describe('Reading Users out of the Database', () => {
                 assert(user.name === 'Joe');
                 done();
             });
+    });
+
+    it('Can Skip & Limit result set (filtering/pagination)', (done) => {
+        // Users : Joe, Sue, Tom, Ann
+        User.find({})
+            .sort({name: 1}) // Sort Ascendig. -1 for descending
+            .skip(1)
+            .limit(2)
+            .then((users) => {
+                assert(users.length === 2);
+                assert(users[0].name === 'Joe');
+                assert(users[1].name === 'Sue');
+                done();
+            })
     });
 });

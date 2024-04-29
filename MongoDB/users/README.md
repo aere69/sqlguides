@@ -27,6 +27,10 @@ The objective is to create a **User Model**.
 - The Schema represents the properties expected inside the Model.
 - From a model we will create instances of the schema.
 
+  Mongoose **Models** are created to correspond to a collection of records inside the Database.
+  If what we are adding is not represented by a standalone collection, then only create a schema for it and add it to a current model. (Subdocuments).
+  
+
 User Model -> Schema -> Name
 
 ```sh
@@ -97,3 +101,9 @@ MongoDB update record/instance on database.
 - set and save
 
 [Update Operators Documentation](https://www.mongodb.com/docs/manual/reference/operator/update/)
+
+## Virtual Types
+
+Virtual Type, Virtual Property or Virual Field refers to any type of property on the model that is not actually saved to the MongoDB database.
+
+Properties on a model that are a derivative or the producto of two or more other properties.
