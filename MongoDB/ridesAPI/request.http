@@ -1,0 +1,27 @@
+###
+
+http://localhost:3050/api
+
+###
+
+POST http://localhost:3050/api/drivers HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "testEmail@test.com",
+    "location": { "coordinates": [10,10] }
+}
+
+###
+
+PUT http://localhost:3050/api/drivers/66325b27a88407fe0e50088a HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "testEmail1@test.com"
+}
+
+###
+
+DELETE http://localhost:3050/api/drivers/66325b5ea88407fe0e50088e HTTP/1.1
+Content-Type: application/json

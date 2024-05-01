@@ -1,0 +1,20 @@
+{
+  "name": "ridesapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "SET NODE_ENV=test& nodemon --exec \"mocha --recursive -R min\"",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "mocha": "^10.4.0",
+    "mongoose": "^8.3.3",
+    "nodemon": "^3.1.0",
+    "supertest": "^7.0.0"
+  }
+}
